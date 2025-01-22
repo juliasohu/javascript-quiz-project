@@ -24,7 +24,8 @@ class Quiz {
  }
 
   checkAnswer(answer){
-      this.correctAnswers++
+    if (this.getQuestion().answer === answer)  
+    this.correctAnswers++
   }
 
   hasEnded(){
