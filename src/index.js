@@ -24,7 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Array with the quiz questions
   const questions = [
-    new Question("What will this code print? let a = 'b' console.log(b)", ["b ", "a", "Error", "undefined"], "Error", 1),
+    new Question(
+      "What will this code print? let a = 'b' console.log(b)",
+      ["b ", "a", "Error", "undefined"],
+      "Error",
+      1
+    ),
     new Question(
       "What is the capital of Spain?",
       ["Miami", "Paris", "Madrid", "Rome"],
@@ -78,33 +83,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /************  TIMER  ************/
 
-  let timer
+  let timer;
 
   const mainContainer = document.querySelector(".container");
   mainContainer.addEventListener("click", () => {
     startTimer();
-  })
-  
+  });
+
   function updateTimerDisplay() {
-    const minutes = Math.floor(quiz.timeRemaining / 60).toString().padStart(2, "0");
+    const minutes = Math.floor(quiz.timeRemaining / 60)
+      .toString()
+      .padStart(2, "0");
     const seconds = (quiz.timeRemaining % 60).toString().padStart(2, "0");
-    timeRemainingContainer.innerText = `${minutes}:${seconds}`}
-  
+    timeRemainingContainer.innerText = `${minutes}:${seconds}`;
+  }
+
   function startTimer() {
     clearInterval(timer);
-    updateTimerDisplay()
+    updateTimerDisplay();
 
-    timer = setInterval(function(){
-      quiz.timeRemaining--
-      updateTimerDisplay()
+    timer = setInterval(function () {
+      quiz.timeRemaining--;
+      updateTimerDisplay();
       if (quiz.timeRemaining <= 0) {
         clearInterval(timer);
         showResults();
       }
-    },1000)}
- ;
-
-
+    }, 1000);
+  }
   /************  EVENT LISTENERS  ************/
 
   nextButton.addEventListener("click", nextButtonHandler);
@@ -212,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showResults() {
     // 1. Hide the quiz view (div#quizView)
-    clearInterval(timer)
+    clearInterval(timer);
     quizView.style.display = "none";
 
     // 2. Show the end view (div#endView)
