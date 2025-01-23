@@ -24,23 +24,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Array with the quiz questions
   const questions = [
-    new Question("What is 2 + 2?", ["3", "4", "5", "6"], "4", 1),
+    new Question("What will this code print? let a = 'b' console.log(b)", ["b ", "a", "Error", "undefined"], "Error", 1),
     new Question(
-      "What is the capital of France?",
-      ["Miami", "Paris", "Oslo", "Rome"],
-      "Paris",
+      "What is the capital of Spain?",
+      ["Miami", "Paris", "Madrid", "Rome"],
+      "Madrid",
       1
     ),
     new Question(
-      "Who created JavaScript?",
-      ["Plato", "Brendan Eich", "Lea Verou", "Bill Gates"],
-      "Brendan Eich",
+      "When was JavaScript created?",
+      ["1990", "1996", "1992", "1995"],
+      "1995",
       2
     ),
     new Question(
-      "What is the mass–energy equivalence equation?",
-      ["E = mc^2", "E = m*c^2", "E = m*c^3", "E = m*c"],
-      "E = mc^2",
+      "How do we access an ID selector in CSS?",
+      [".", "#", "/", ":"],
+      "#",
+      3
+    ),
+
+    new Question(
+      "What is the longest river in the world?",
+      ["River Tajo", "River Rine", "River Nile", "River Seine"],
+      "River Nile",
       3
     ),
     // Add more questions here
